@@ -1,0 +1,104 @@
+:root {
+  --bg: #f0f0f0;
+  --text: #1a1a1a;
+  --button-bg: #e0e0e0;
+  --button-border: #cccccc;
+  --button-hover: #d0d0d0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.generator-box {
+  background: transparent;
+  padding: 2rem;
+  border: 1px solid var(--button-border);
+  border-radius: 6px;
+  width: 90%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+textarea#password-output {
+  width: 100%;
+  min-height: 80px;
+  font-size: 1rem;
+  padding: 0.8rem;
+  border: 1px solid var(--button-border);
+  border-radius: 4px;
+  background: var(--button-bg);
+  color: var(--text);
+  resize: none;
+  overflow-wrap: break-word;
+  overflow-y: auto;
+}
+
+.buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+button {
+  background: var(--button-bg);
+  color: var(--text);
+  border: 1px solid var(--button-border);
+  padding: 0.8rem 1.2rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: var(--button-hover);
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.8rem;
+  color: inherit;
+}
+
+.top-left-btn {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: var(--button-bg);
+  color: var(--text);
+  border: 1px solid var(--button-border);
+  padding: 0.6rem 1rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  z-index: 1000;
+}
+
+.top-left-btn:hover {
+  background: var(--button-hover);
+}
