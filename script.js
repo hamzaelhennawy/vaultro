@@ -69,21 +69,3 @@ vaultroDownloadBtn.addEventListener('click', function () {
     link.click();
     document.body.removeChild(link);
 });
-// About modal logic
-var aboutBtn = document.getElementById('about-btn');
-var aboutModal = document.getElementById('about-modal');
-var closeBtn = aboutModal.querySelector('.close');
-
-aboutBtn.addEventListener('click', function () {
-    aboutModal.style.display = 'block';
-});
-
-closeBtn.addEventListener('click', function () {
-    aboutModal.style.display = 'none';
-});
-
-window.addEventListener('click', function (event) {
-    if (event.target == aboutModal) {
-        aboutModal.style.display = 'none';
-    }
-});
