@@ -2,7 +2,7 @@ var generateBtn = document.getElementById('generate-btn');
 var passwordOutput = document.getElementById('password-output');
 var downloadBtn = document.getElementById('download-btn');
 var copyBtn = document.getElementById('copy-btn');
-var vaultroDownloadBtn = document.getElementById('vaultro-download-btn'); // New button reference
+var vaultroDownloadBtn = document.getElementById('vaultro-download-btn'); // Download button reference
 
 var upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 var lowerCase = 'abcdefghijklmnopqrstuvwxyz';
@@ -60,15 +60,11 @@ function autoResize(textarea) {
     textarea.style.height = textarea.scrollHeight + 'px';
 }
 
-// 🔽 New: Vaultro ZIP Download Button Functionality
+// 🔽 Updated: Vaultro Redirect Button Functionality (opens in new tab)
 vaultroDownloadBtn.addEventListener('click', function () {
-    var link = document.createElement('a');
-    link.href = 'vaultro-setup.zip'; // Ensure this file exists in the same directory
-    link.download = 'vaultro-setup.zip';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    window.open('https://drive.google.com/file/d/1ivzYa4sZP4iIWO2ZwX-RNlwh2IiNBYEd/view?usp=drive_link', '_blank'); // Replace with your actual link
 });
+
 // About modal logic
 var aboutBtn = document.getElementById('about-btn');
 var aboutModal = document.getElementById('about-modal');
