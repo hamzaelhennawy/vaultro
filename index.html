@@ -1,51 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Vaultro</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="vaultro-logo.png" type="image/png">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="vaultro-logo.png" type="image/png" />
 </head>
 <body>
-<!-- Top-right About button -->
-<button id="about-btn" class="top-right-btn">i</button>
+  <button id="about-btn" class="top-right-btn">i</button>
 
-<!-- About Modal -->
-<div id="about-modal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <h2>What is Vaultro?</h2>
-    <p>
-      Vaultro is a simple and secure website that helps you generate very strong passwords with a single click—no technical knowledge or software installation required.
-    </p>
-    <h3>What does the website offer?</h3>
-    <ul>
-      <li>It generates a 50-character password that includes:</li>
+  <div id="about-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>What is Vaultro?</h2>
+      <p>Vaultro is a simple and secure website that helps you generate very strong passwords with a single click—no technical knowledge or software installation required.</p>
+      <h3>What does the website offer?</h3>
       <ul>
-        <li>Uppercase and lowercase letters</li>
-        <li>Special characters like @, #, $</li>
+        <li>Customizable password generator with:</li>
+        <ul>
+          <li>Password length control</li>
+          <li>Character set selection</li>
+          <li>Optional word inclusion (e.g., vaultro)</li>
+        </ul>
+        <li>One-click copy and download (.txt or .pdf)</li>
       </ul>
-      <li>Every password is completely unique and cannot be repeated.</li>
-      <li>You can easily copy the password or download it as a text file for safekeeping.</li>
-      <li>It works on any device—computer, phone, or tablet—just open the website.</li>
-      <li>A button is available to download a dedicated Windows version directly from the site.</li>
-    </ul>
-    <p>Vaultro is designed to be easy to use and highly secure, helping you protect your accounts with passwords that are nearly impossible to guess.</p>
+      <p>Vaultro is designed to be easy to use and highly secure.</p>
+    </div>
   </div>
-</div>
 
-  <!-- Top-left Download Vaultro button -->
   <button id="vaultro-download-btn" class="top-left-btn">Download Vaultro</button>
 
   <main>
     <div class="generator-box">
+      <label for="length">Password Length: <span id="length-value">20</span></label>
+      <input type="range" id="length" min="12" max="50" value="20" />
+
+      <div class="options">
+        <label><input type="checkbox" id="uppercase" checked /> Include Uppercase</label>
+        <label><input type="checkbox" id="lowercase" checked /> Include Lowercase</label>
+        <label><input type="checkbox" id="special" checked /> Include Special Characters</label>
+        <label>
+          Include Custom Word:
+          <input type="text" id="custom-word" placeholder="e.g., vaultro" />
+        </label>
+      </div>
+
       <textarea id="password-output" readonly placeholder="Generated password..."></textarea>
 
       <div class="buttons">
         <button id="generate-btn">Generate</button>
         <button id="copy-btn">Copy</button>
         <button id="download-btn">Download (.txt)</button>
+        <button id="download-pdf-btn">Download (.pdf)</button>
       </div>
     </div>
   </main>
@@ -54,7 +61,8 @@
     <p>© 2025 Vaultro. All rights reserved.</p>
   </footer>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script src="script.js"></script>
-  
 </body>
 </html>
+
