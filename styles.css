@@ -44,7 +44,7 @@ main {
 textarea#password-output {
   width: 100%;
   min-height: 80px;
-  font-size: 1rem;
+  font-size: 1.2rem;
   padding: 0.8rem;
   border: 1px solid var(--button-border);
   border-radius: 4px;
@@ -53,6 +53,8 @@ textarea#password-output {
   resize: none;
   overflow-wrap: break-word;
   overflow-y: auto;
+  font-family: 'Fira Code', 'JetBrains Mono', 'Cascadia Code', 'Source Code Pro', monospace;
+  letter-spacing: 0.05em;
 }
 
 .buttons {
